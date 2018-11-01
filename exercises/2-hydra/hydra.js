@@ -1,8 +1,8 @@
 var itsPlace;
 
-itsPlace = $('.hydra').offsetParent();
+itsPlace = $('.2-hydra').offsetParent();
 
-$('.hydra').click(function() {
+$('.2-hydra').click(function() {
   var h, heads, i, j, len;
   heads = (function() {
     var j, results;
@@ -17,5 +17,5 @@ $('.hydra').click(function() {
     h = heads[j];
     h.appendTo(itsPlace);
   }
-  return $('body > p').text("Button count: " + ($('.hydra').size()));
+  return $('body > p').text("Button count: " + ($('.2-hydra').size()));
 });
