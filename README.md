@@ -1,10 +1,11 @@
-# Code Kata (programming exercises)
-Because I f*cking love programming
+# Code Kata (programming practice)
+Because I f*cking love programming.
 
 #### Inspiration
-Some places I have found ideas for Kata:
+Some places I have found ideas for *Kata*:
 
 - http://www.careercup.com/
+- https://projecteuler.net/
 
 Resources for developing skills & preparing for interviews:
 
