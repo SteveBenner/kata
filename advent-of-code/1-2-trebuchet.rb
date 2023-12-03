@@ -16,7 +16,7 @@ end
 
 sum = 0
 $line = 0
-File.foreach '1-1-input' do |line|
+File.foreach '1-input' do |line|
   $line += 1
   first = first_digit line
   last = last_digit line.reverse
