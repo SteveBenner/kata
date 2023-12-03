@@ -4,8 +4,9 @@ Because I f*cking love programming.
 #### Inspiration
 Some places I have found ideas for *Kata*:
 
-- http://www.careercup.com/
+- https://www.careercup.com/page?sort=votes
 - https://projecteuler.net/
+- https://adventofcode.com/
 
 Resources for developing skills & preparing for interviews:
 
