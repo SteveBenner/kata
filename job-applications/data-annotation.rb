@@ -29,25 +29,33 @@
 #
 # ... and your function should return the string "I love computers".
 def decode(message_file)
-  lines, message = {}, []
-  File.new(message_file).each_line do |line|
-    lines[line.match(/\d+/)[0]] = line.match(/[a-zA-Z]+/)[0]
+  # Read the input file and store number-word pairs in a hash
+  number_word_pairs = {}
+  File.foreach(message_file) do |line|
+    number, word = line.strip.split ' '
+    number_word_pairs[number.to_i] = word
   end
-  row, pyramid = 1, []
-  lines.sort_by {|(number, word)| number }
-       .reduce([]) do |arr, (number, word)|
-    arr << number.to_i
-    puts arr.size
-    if arr.size >= row
-      pyramid << arr
-      puts pyramid
-      message << word
-      arr = []
-      print arr
+
+  # Find the maximum number in the dictionary
+  max = number_word_pairs.keys.max
+
+  # Initialize variables for tracking the pyramid structure
+  current_row_length = 1
+  current_row_sum = 0
+  decoded_words = []
+
+  # Iterate over the numbers to find message components
+  1.upto(max) do |number|
+    current_row_sum += number
+
+    # If the current number is at the end of a pyramid line, retrieve the corresponding word
+    if current_row_sum == (current_row_length * (current_row_length + 1) / 2)
+      decoded_words << number_word_pairs[current_row_sum]
+      current_row_length += 1
     end
-    row += 1
   end
-  message.join ' '
-  puts message
+
+  # Concatenate retrieved words to form the decoded message
+  decoded_words.join ' '
 end
-decode('/Users/sven/Downloads/data.txt')
+puts decode '/Users/sven/Downloads/coding_qual_input.txt'
